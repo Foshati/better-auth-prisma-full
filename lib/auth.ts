@@ -24,6 +24,7 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
@@ -32,6 +33,7 @@ export const auth = betterAuth({
   session: {
     freshAge: 0,
   },
+
   emailVerification: {
     async sendVerificationEmail({ user, url }) {
       const res = await resend.emails.send({
@@ -43,11 +45,13 @@ export const auth = betterAuth({
       console.log(res, user.email);
     },
   },
+
   account: {
     accountLinking: {
       trustedProviders: ["google", "github", "demo-app"],
     },
   },
+
   emailAndPassword: {
     enabled: true,
     async sendResetPassword({ user, url }) {
@@ -62,6 +66,7 @@ export const auth = betterAuth({
       });
     },
   },
+
   socialProviders: {
     facebook: {
       clientId: process.env.FACEBOOK_CLIENT_ID || "",
@@ -92,6 +97,14 @@ export const auth = betterAuth({
       clientSecret: process.env.TWITTER_CLIENT_SECRET || "",
     },
   },
+
+  trustedOrigins: [
+    "https://foshatia3.liara.run/api/auth",
+    "https://foshatia3.liara.run/sign-in",
+    "https://0.0.0.0:3000",
+    "http://localhost:3000",
+  ],
+
   plugins: [
     organization({
       async sendInvitationEmail(data) {
@@ -115,6 +128,7 @@ export const auth = betterAuth({
         });
       },
     }),
+
     twoFactor({
       otpOptions: {
         async sendOTP({ user, otp }) {
@@ -127,6 +141,7 @@ export const auth = betterAuth({
         },
       },
     }),
+
     passkey(),
     openAPI(),
     bearer(),
