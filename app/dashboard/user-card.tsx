@@ -769,7 +769,7 @@ function ListPasskeys() {
 							</TableRow>
 						</TableHeader>
 						<TableBody>
-							{data.map((passkey) => (
+							{data.map((passkey:any) => (
 								<TableRow
 									key={passkey.id}
 									className="flex  justify-between items-center"
