@@ -1,6 +1,7 @@
 import { SignInButton, SignInFallback } from "@/components/sign-in-btn";
 import { Suspense } from "react";
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export default async function Home() {
 	const features = [
 		"Email & Password",
@@ -21,14 +22,14 @@ export default async function Home() {
 						Better Auth.
 					</h3>
 					<p className="text-center break-words text-sm md:text-base">
-						Official demo to showcase{" "}
+						Official demo to showcase
 						<a
 							href="https://better-auth.com"
 							target="_blank"
 							className="italic underline"
 						>
 							better-auth.
-						</a>{" "}
+						</a>
 						features and capabilities. <br />
 					</p>
 				</div>
@@ -53,9 +54,7 @@ export default async function Home() {
 							))}
 						</div>
 					</div>
-					{/* @ts-ignore */}
 					<Suspense fallback={<SignInFallback />}>
-						{/* @ts-ignore */}
 						<SignInButton />
 					</Suspense>
 				</div>

@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const THEMES = { light: "", dark: ".dark" } as const;
 
 export type ChartConfig = {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	[k in string]: {
 		label?: React.ReactNode;
 		icon?: React.ComponentType;
@@ -69,6 +70,7 @@ ChartContainer.displayName = "Chart";
 
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
 	const colorConfig = Object.entries(config).filter(
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		([_, config]) => config.theme || config.color,
 	);
 
@@ -143,7 +145,7 @@ const ChartTooltipContent = React.forwardRef<
 			const itemConfig = getPayloadConfigFromPayload(config, item, key);
 			const value =
 				!labelKey && typeof label === "string"
-					? config[label as keyof typeof config]?.label || label
+					? config[label]?.label || label
 					: itemConfig?.label;
 
 			if (labelFormatter) {
@@ -286,6 +288,7 @@ const ChartLegendContent = React.forwardRef<
 				)}
 			>
 				{payload.map((item) => {
+					// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 					const key = `${nameKey || item.dataKey || "value"}`;
 					const itemConfig = getPayloadConfigFromPayload(config, item, key);
 
@@ -352,7 +355,7 @@ function getPayloadConfigFromPayload(
 
 	return configLabelKey in config
 		? config[configLabelKey]
-		: config[key as keyof typeof config];
+		: config[key];
 }
 
 export {

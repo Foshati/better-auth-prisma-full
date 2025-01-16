@@ -5,13 +5,15 @@ import {
 	twoFactorClient,
 	adminClient,
 	multiSessionClient,
-	oneTapClient,
 	oidcClient,
 	genericOAuthClient,
 } from "better-auth/client/plugins";
 import { toast } from "sonner";
 
 export const client = createAuthClient({
+	baseURL: process.env.BETTER_AUTH_URL,
+
+
 	plugins: [
 		organizationClient(),
 		twoFactorClient({
@@ -22,9 +24,6 @@ export const client = createAuthClient({
 		passkeyClient(),
 		adminClient(),
 		multiSessionClient(),
-		oneTapClient({
-			clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
-		}),
 		oidcClient(),
 		genericOAuthClient(),
 	],

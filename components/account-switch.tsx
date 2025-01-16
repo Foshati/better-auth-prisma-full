@@ -54,7 +54,6 @@ export default function AccountSwitcher({
 					<CommandList>
 						<CommandGroup heading="Current Account">
 							<CommandItem
-								onSelect={() => {}}
 								className="text-sm w-full justify-between"
 								key={currentUser?.user.id}
 							>

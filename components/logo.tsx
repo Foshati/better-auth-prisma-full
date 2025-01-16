@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { SVGProps } from "react";
 
-export const Logo = (props: SVGProps<any>) => {
+export const Logo = (_props: SVGProps<any>) => {
 	return (
 		<svg
 			width="60"

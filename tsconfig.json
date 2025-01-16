@@ -1,27 +1,47 @@
 {
 	"compilerOptions": {
-		"target": "ES2017",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
-		"paths": {
-			"@/*": ["./*"]
+	  "lib": ["dom", "dom.iterable", "esnext"],
+	  "allowJs": true,
+	  "skipLibCheck": true,
+	  "strict": true,
+	  "noEmit": true,
+	  "esModuleInterop": true,
+	  "module": "esnext",
+	  "moduleResolution": "bundler",
+	  "resolveJsonModule": true,
+	  "isolatedModules": true,
+	  "jsx": "preserve",
+	  "incremental": true,
+	  "plugins": [
+		{
+		  "name": "next"
 		}
+	  ],
+	  "baseUrl": ".",
+	  "paths": {
+		"@/*": ["./*"],
+		"@/components/*": ["./components/*"],
+		"@/app/*": ["./app/*"],
+		"@/lib/*": ["./lib/*"]
+	  },
+	  "target": "ES2020",
+	  "typeRoots": ["./src/types"]
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/ui/canvas-reveal-effect.tsx"],
+	"include": [
+	  "next-env.d.ts",
+	  "**/*.ts",
+	  "**/*.tsx",
+	  "**/*.js",
+	  "**/*.jsx",
+	  ".next/types/**/*.ts",
+	  "components/layout/header/Header.tsx",
+	  "tailwind.config.ts",
+	  "components/ui/aurora-background.tsx",
+	  "components/ui/PlayMusic/playMusic.tsx",
+	  "**/*.mjs",
+	  "components/ui/richText/RichTextEditor.tsx",
+	  "app/about/page.tsx"
+	],
 	"exclude": ["node_modules"]
-}
+  }
+  

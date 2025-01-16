@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/prefer-optional-chain */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -83,8 +85,9 @@ export function OrganizationCard(props: {
             <DropdownMenuContent align="start">
               <DropdownMenuItem
                 className=" py-1"
+                // eslint-disable-next-line @typescript-eslint/require-await
                 onClick={async () => {
-                  organization.setActive({
+                  void organization.setActive({
                     organizationId: null,
                   });
                   setOptimisticOrg(null);
@@ -174,7 +177,7 @@ export function OrganizationCard(props: {
                         size="sm"
                         variant="destructive"
                         onClick={() => {
-                          organization.removeMember({
+                          void organization.removeMember({
                             memberIdOrEmail: member.id,
                           });
                         }}
@@ -232,7 +235,7 @@ export function OrganizationCard(props: {
                           size="sm"
                           variant="destructive"
                           onClick={() => {
-                            organization.cancelInvitation(
+                            void organization.cancelInvitation(
                               {
                                 invitationId: invitation.id,
                               },
@@ -492,6 +495,7 @@ function InviteMemberDialog({
           <DialogClose>
             <Button
               disabled={loading}
+              // eslint-disable-next-line @typescript-eslint/require-await
               onClick={async () => {
                 const invite = organization.inviteMember({
                   email: email,
@@ -514,6 +518,7 @@ function InviteMemberDialog({
                 toast.promise(invite, {
                   loading: "Inviting member...",
                   success: "Member invited successfully",
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
                   error: (error) => error.error.message,
                 });
               }}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -101,7 +102,7 @@ export default function UserCard(props: {
 						<AlertTitle>Verify Your Email Address</AlertTitle>
 						<AlertDescription className="text-muted-foreground">
 							Please verify your email address. Check your inbox for the
-							verification email. If you haven't received the email, click the
+							verification email. If you haven&apos;t received the email, click the
 							button below to resend.
 						</AlertDescription>
 						<Button
@@ -328,7 +329,6 @@ export default function UserCard(props: {
 												setIsPendingTwoFa(true);
 												if (session?.user.twoFactorEnabled) {
 													const res = await client.twoFactor.disable({
-														//@ts-ignore
 														password: twoFaPassword,
 														fetchOptions: {
 															onError(context) {

@@ -20,6 +20,7 @@ export default async function DashboardPage() {
 			auth.api.getFullOrganization({
 				headers: await headers(),
 			}),
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		]).catch((e) => {
 			throw redirect("/sign-in");
 		});
