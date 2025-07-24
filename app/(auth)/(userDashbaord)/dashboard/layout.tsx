@@ -1,3 +1,4 @@
+import { SidebarProvider } from '@/components/ui/sidebar';
 import type { Metadata } from 'next';
 import { AppSidebar } from './_components/app-sidebar';
 import NavbarDashboard from './_components/NavbarDashboard';
@@ -13,13 +14,15 @@ export default function UserDashbaordLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className='flex flex-1'>
-      <AppSidebar />
+    <SidebarProvider>
+      <div className='flex flex-1'>
+        <AppSidebar />
 
-      <div className=' w-full '>
-        <NavbarDashboard />
-        <main>{children}</main>
+        <div className=' w-full '>
+          <NavbarDashboard />
+          <main>{children}</main>
+        </div>
       </div>
-    </div>
+    </SidebarProvider>
   );
 }

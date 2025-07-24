@@ -1,4 +1,4 @@
-import { Calendar, ChartNoAxesGantt, InfoIcon, Search, Settings } from "lucide-react"
+import { Calendar, ChartNoAxesGantt, InfoIcon, Search, Settings } from 'lucide-react';
 
 import {
   Sidebar,
@@ -9,37 +9,37 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import Link from "next/link"
+} from '@/components/ui/sidebar';
+import Link from 'next/link';
 
 // Menu items.
 const items = [
   {
-    title: "info",
-    url: "/admin",
+    title: 'info',
+    url: '/admin',
     icon: InfoIcon,
   },
   {
-    title: "Management",
-    url: "/admin/management",
+    title: 'Management',
+    url: '/admin/management',
     icon: ChartNoAxesGantt,
   },
   {
-    title: "Calendar",
-    url: "#",
+    title: 'Calendar',
+    url: '#',
     icon: Calendar,
   },
   {
-    title: "Search",
-    url: "#",
+    title: 'Search',
+    url: '#',
     icon: Search,
   },
   {
-    title: "Settings",
-    url: "/admin/settings",
+    title: 'Settings',
+    url: '/admin/settings',
     icon: Settings,
   },
-]
+];
 
 export function AppSidebar() {
   return (
@@ -64,5 +64,5 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }
