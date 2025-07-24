@@ -1,9 +1,9 @@
-import ChooseTheme from "@/components/darkMode/ChooseTheme";
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function page() {
   return (
-    <div >
-      <ChooseTheme />
+    <div>
+      <ThemeToggle />
     </div>
   );
 }
