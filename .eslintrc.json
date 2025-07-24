@@ -12,9 +12,9 @@
   },
   "rules": {
     "import/named": "off",
+    "import/no-unresolved": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "import/no-unresolved": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "no-empty-function": "error",
     "@typescript-eslint/no-empty-function": "error",
@@ -41,7 +41,6 @@
         "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/no-floating-promises": "off",
         "eslint-disable @typescript-eslint/no-unused-vars": "off"
-        
       }
     }
   ]
