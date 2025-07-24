@@ -1,9 +1,9 @@
-import ChooseTheme from "@/components/darkMode/ChooseTheme";
+// import ChooseTheme from "@/components/darkMode/ChooseTheme";
 
-export default function page() {
-  return (
-    <div >
-      <ChooseTheme />
-    </div>
-  );
-}
+// export default function page() {
+//   return (
+//     <div >
+//       <ChooseTheme />
+//     </div>
+//   );
+// }
