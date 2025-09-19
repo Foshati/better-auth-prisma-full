@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <link rel='icon' href='/favicon/favicon.ico' sizes='any' />
       </head>
-      <body>
+      <body className='overflow-hidden'>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           <Wrapper>
             <WrapperWithQuery>{children}</WrapperWithQuery>
